@@ -12,6 +12,10 @@ class Pessoa {
         self::$numPessoas++;
     }
 
+    public function __destruct(){
+        self::$numPessoas--;
+    }
+
     public function getNome(){
         return $this->nome;
     }
