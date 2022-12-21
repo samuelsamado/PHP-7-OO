@@ -7,14 +7,15 @@ class Pessoa {
     public function __construct(string $nome, int $idade){
         $this->setNome($nome);
         $this->setIdade($idade);
+        $this->validaIdade($idade);
     }
 
     public function getNome(){
-        $this->nome;
+        return $this->nome;
     }
 
     public function getIdade(){
-        $this->idade;
+        return $this->idade;
     }
 
     public function setNome(string $nome){
@@ -23,5 +24,13 @@ class Pessoa {
 
     public function setIdade(int $idade){
         $this->idade = $idade;
+    }
+
+    public function validaIdade(int $idade){
+        if($this->getIdade() > 0 && $this->getIdade() < 120){
+            $this->setIdade($idade);
+        }else{
+            die("Idade não permitida!");
+        }
     }
 }
