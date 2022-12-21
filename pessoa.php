@@ -3,11 +3,13 @@
 class Pessoa {
     private string $nome;
     private int $idade;
+    private static $numPessoas = 0;
 
     public function __construct(string $nome, int $idade){
         $this->setNome($nome);
         $this->setIdade($idade);
         $this->validaIdade($idade);
+        self::$numPessoas++;
     }
 
     public function getNome(){
@@ -16,6 +18,10 @@ class Pessoa {
 
     public function getIdade(){
         return $this->idade;
+    }
+
+    public static function getNumPessoas(){
+        return self::$numPessoas;
     }
 
     public function setNome(string $nome){
