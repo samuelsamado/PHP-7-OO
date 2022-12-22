@@ -1,10 +1,11 @@
 <?php
 
-class Pessoa {
+abstract class Pessoa {
     private string $nome;
     private int $idade;
     private Endereco $endereco;
     private static $numPessoas = 0;
+    protected float $desconto;
 
     public function __construct(string $nome, int $idade, Endereco $endereco)
     {
@@ -12,6 +13,7 @@ class Pessoa {
         $this->setIdade($idade);
         $this->setEndereco($endereco);
         $this->validaIdade($idade);
+        $this->setDesconto();
         self::$numPessoas++;
     }
 
@@ -63,4 +65,11 @@ class Pessoa {
             die("Idade não permitida!");
         }
     }
+    
+    public function getDesconto():float
+    {
+        return $this->desconto;
+    }
+
+    protected abstract function setDesconto():void;
 }

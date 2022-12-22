@@ -1,10 +1,11 @@
 <?php
 include_once('Pessoa.php');
 
-class Funcionario extends Pessoa
+class Funcionario extends Pessoa implements Autenticar
 {
     private string $cargo;
     private float $salario;
+    private $senha;
 
     public function __construct(string $nome, int $idade,Endereco $endereco, string $cargo, float $salario)
     {
@@ -22,6 +23,11 @@ class Funcionario extends Pessoa
         return $this->salario;
     }
 
+    public function getSenha():string
+    {
+        $this->senha;
+    }
+
     public function setCargo(string $cargo):void
     {
         $this->cargo = $cargo;
@@ -31,4 +37,24 @@ class Funcionario extends Pessoa
     {
         $this->salario = $salario;
     }
+
+    public function setDesconto():void
+    {
+        $this->desconto = 0.10;
+    }
+
+    public function setSenha(string $senha):void
+    {
+        $this->senha = $senha;
+    }
+
+    public function login($nome,$senha)
+    {
+        if($this->getNome() === $nome && $this->getSenha() === $senha){
+            return "<p>[LOGIN: Usuario " . $this->nome ."autenticado com sucesso!]</p>";
+        }else{
+            return "<p>[Erro! Usuario ou senha incorreta. ]</p>";
+        }
+    }
+
 }

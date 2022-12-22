@@ -6,6 +6,7 @@ class Cliente extends Pessoa
     private string $dataNacimento;
     private float $renda;
 
+
     public function __construct($nome,$idade,$endereco,$dataNacimento,$renda)
     {
         parent::__construct($nome,$idade,$endereco);
@@ -31,5 +32,10 @@ class Cliente extends Pessoa
     public function setRenda($renda):void
     {
         $this->renda = $renda;
+    }
+
+    public function setDesconto():void
+    {
+        $this->desconto = 0.05;
     }
 }
