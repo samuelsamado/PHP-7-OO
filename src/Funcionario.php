@@ -1,5 +1,6 @@
 <?php
 include_once('Pessoa.php');
+include_once('Autenticar.php');
 
 class Funcionario extends Pessoa implements Autenticar
 {
@@ -25,7 +26,7 @@ class Funcionario extends Pessoa implements Autenticar
 
     public function getSenha():string
     {
-        $this->senha;
+        return $this->senha;
     }
 
     public function setCargo(string $cargo):void
@@ -48,10 +49,10 @@ class Funcionario extends Pessoa implements Autenticar
         $this->senha = $senha;
     }
 
-    public function login($nome,$senha)
+    public function login($nome,$senha):string
     {
         if($this->getNome() === $nome && $this->getSenha() === $senha){
-            return "<p>[LOGIN: Usuario " . $this->nome ."autenticado com sucesso!]</p>";
+            return "<p>[LOGIN: Usuario " . $this->getNome() . " autenticado com sucesso!]</p>";
         }else{
             return "<p>[Erro! Usuario ou senha incorreta. ]</p>";
         }

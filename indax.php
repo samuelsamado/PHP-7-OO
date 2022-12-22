@@ -9,5 +9,6 @@ $endereco1 = new Endereco('SP','Bebedouro','Lucas Evangelista', '1234','Centro',
 $funcionario1 = new Funcionario('Samuel', 25,$endereco1,'Progrmador',5.000);
 // $pesoas2 = new pessoa('Ligia', 30);
 // unset($pesoas2);
-var_dump($funcionario1);
+$funcionario1->setSenha('123');
+var_dump($funcionario1->login('Samuel','123'));
 // var_dump($pessoa1::getNumPessoas());
