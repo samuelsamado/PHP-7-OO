@@ -1,6 +1,10 @@
 <?php
 
+namespace Model;
+require_once 'autoload.php';
+
 abstract class Pessoa {
+    use AcessoAtributos;
     private string $nome;
     private int $idade;
     private Endereco $endereco;

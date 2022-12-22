@@ -1,5 +1,7 @@
 <?php
-include_once('Pessoa.php');
+
+namespace Model;
+require_once 'autoload.php';
 
 class Cliente extends Pessoa
 {

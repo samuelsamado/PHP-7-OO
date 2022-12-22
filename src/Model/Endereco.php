@@ -1,7 +1,11 @@
 <?php
 
+namespace Model;
+require_once 'autoload.php';
+
 class Endereco
 {
+    use AcessoAtributos;
     private string $uf;
     private string $cidade;
     private string $nomeLogradouro;

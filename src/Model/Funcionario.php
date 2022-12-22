@@ -1,6 +1,8 @@
 <?php
-include_once('Pessoa.php');
-include_once('Autenticar.php');
+
+namespace Model;
+
+require_once 'autoload.php';
 
 class Funcionario extends Pessoa implements Autenticar
 {
